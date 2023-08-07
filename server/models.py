@@ -37,7 +37,7 @@ class User(db.Model, SerializerMixin):
     #validations
     @validates('username')
     def validate_username(self,key,new_username):
-        if not 1 <= len(username) <= 25:
+        if not 1 <= len(new_username) <= 25:
             raise ValueError('Username must be between 1 and 25 characters')
         return new_username
 
