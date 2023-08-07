@@ -35,6 +35,11 @@ class User(db.Model, SerializerMixin):
     serialize_rules = ('-hikes.user','-trails.user','-_password_hash',)
 
     #validations
+    @validates('username')
+    def validate_username(self,key,new_username):
+        if not 1 <= len(username) <= 25:
+            raise ValueError('Username must be between 1 and 25 characters')
+        return new_username
 
     def __repr__(self):
         return f'<username:{self.username}>'
@@ -43,7 +48,7 @@ class Trail(db.Model, SerializerMixin):
     __tablename__ = 'trails'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
+    name = db.Column(db.String, nullable=False)
     location = db.Column(db.String)
     park = db.Column(db.String)
 
@@ -67,8 +72,8 @@ class Hike(db.Model, SerializerMixin):
     __tablename__ = 'hikes'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    trail_id = db.Column(db.Integer, db.ForeignKey('trails.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    trail_id = db.Column(db.Integer, db.ForeignKey('trails.id'), nullable=False)
     difficulty = db.Column(db.Integer) # <-- perceived difficulty
 
     #relationships
@@ -79,6 +84,11 @@ class Hike(db.Model, SerializerMixin):
     serialize_rules = ('-user.hikes','-trail.hikes',)
 
     #validations
+    @validates('difficulty')
+    def validate_difficulty(self,key,new_diffficulty):
+        if not 1 <= new_diffficulty <= 5:
+            raise ValueError('Difficulty must be between 1 and 5')
+        return new_diffficulty
 
     def __repr__(self):
         return f'<user_id:{self.user_id}, trail:{self.trail_id}, difficulty:{self.difficulty}>'
