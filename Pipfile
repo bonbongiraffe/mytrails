@@ -9,6 +9,7 @@ flask = "*"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 ipdb = "*"
+flask-restful = "*"
 
 [dev-packages]
 
