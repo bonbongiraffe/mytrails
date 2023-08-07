@@ -34,7 +34,7 @@ class User(db.Model, SerializerMixin):
     #validations
 
     def __repr__(self):
-        pass
+        return f'<username:{self.username}>'
 
 class Trail(db.Model, SerializerMixin):
     __tablename__ = 'trails'
@@ -58,7 +58,7 @@ class Trail(db.Model, SerializerMixin):
     #validations
 
     def __repr__(self):
-        pass
+        return f'<name:{self.name}, location:{self.location}, park:{self.park}>'
 
 class Hike(db.Model, SerializerMixin):
     __tablename__ = 'hikes'
@@ -70,7 +70,7 @@ class Hike(db.Model, SerializerMixin):
 
     #relationships
     user = db.relationship('User',back_populates='hikes')
-    trail = db.relationship('Trail',back_populates='trails')
+    trail = db.relationship('Trail',back_populates='hikes')
 
     #serialize rules
     serialize_rules = ('-user.hikes','-trail.hikes',)
@@ -78,4 +78,4 @@ class Hike(db.Model, SerializerMixin):
     #validations
 
     def __repr__(self):
-        pass
+        return f'<user_id:{self.user_id}, trail:{self.trail_id}, difficulty:{self.difficulty}>'
