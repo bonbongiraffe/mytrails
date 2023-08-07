@@ -10,6 +10,7 @@ flask-migrate = "*"
 flask-sqlalchemy = "*"
 ipdb = "*"
 flask-restful = "*"
+flask-bcrypt = "*"
 
 [dev-packages]
 
