@@ -7,6 +7,8 @@ filepath = 'trails.csv'
 
 def clear_database():
     with app.app_context():
+        print('Deleting users...')
+        User.query.delete()
         Trail.query.delete()
         db.session.commit()
 

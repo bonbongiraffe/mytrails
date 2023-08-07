@@ -4,6 +4,8 @@ from sqlalchemy.orm import validates
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.ext.associationproxy import association_proxy
+from flask_bcrypt import Bcrypt
+from app import app
 
 metadata = MetaData(naming_convention={
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
@@ -13,6 +15,7 @@ metadata = MetaData(naming_convention={
 })
 
 db = SQLAlchemy(metadata=metadata)
+bcrypt = Bcrypt( app )
 
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
@@ -21,9 +24,10 @@ class User(db.Model, SerializerMixin):
     username = db.Column(db.String, nullable=False)
     _password_hash = db.Column(db.String)
 
-    @hybrid_property
+    @property
     def password_hash(self):
-        raise Exception('Password hashes may not be viewed.')
+        return _password_hash
+        #raise Exception('Password hashes may not be viewed.')
 
     @password_hash.setter
     def password_hash(self, password):

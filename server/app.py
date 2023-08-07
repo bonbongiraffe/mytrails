@@ -24,11 +24,11 @@ def index():
     return '<h1>Happy Trails!</h1>'
 
 class Users(Resource):
-    def get():
+    def get(self):
         users = [u.to_dict() for u in User.query.all()]
         return make_response( users, 200 )
 
-    def post():
+    def post(self):
         data = request.get_json()
         try:
             new_user = User(
@@ -41,7 +41,19 @@ class Users(Resource):
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
 
+class Trails(Resource):
+    def get(self):
+        trails = [t.to_dict() for t in Trail.query.all()]
+        return make_response(trails,200)
+
+class Hikes(Resource):
+    def get(self):
+        hikes = [t.to_dict() for t in Hike.query.all()]
+        return make_response(hikes,200)
+
 api.add_resource(Users,'/users')
+api.add_resource(Trails,'/trails')
+api.add_resource(Hikes,'/hikes')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
