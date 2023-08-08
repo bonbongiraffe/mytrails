@@ -23,7 +23,7 @@ class Users(Resource):
             )
             db.session.add(new_user)
             db.session.commit()
-            session['user_id'] = new_user.id # <-- cookie
+            #session['user_id'] = new_user.id # <-- cookie
             return make_response(new_user.to_dict(),201)
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
@@ -37,6 +37,22 @@ class Hikes(Resource):
     def get(self):
         hikes = [h.to_dict() for h in Hike.query.all()]
         return make_response(hikes,200)
+
+    def post(self):
+        data = request.get_json()
+        try:
+            new_hike = Hike(
+                user_id = data["user_id"],
+                trail_id = data["trail_id"],
+                difficulty = data["difficulty"],
+                rating = data["rating"],
+                review = data["review"]
+            )
+            db.session.add(new_hike)
+            db.session.commit()
+            return make_response(new_hike.to_dict(),201)
+        except ValueError as v_error:
+            return make_response({'errors':[v_error]},400)
 
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')

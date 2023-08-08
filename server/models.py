@@ -32,7 +32,7 @@ class User(db.Model, SerializerMixin):
     trails = association_proxy('hikes','trail')
 
     #serialize rules
-    serialize_rules = ('-hikes.user','-trails.user','-_password_hash',)
+    serialize_rules = ('-hikes.user','-trails.users','-_password_hash',)
 
     #validations
     @validates('username')
@@ -61,7 +61,7 @@ class Trail(db.Model, SerializerMixin):
     users = association_proxy('hikes','user')
 
     #serialize rules
-    serialize_rules = ('-hikes.trail','users.trail',)
+    serialize_rules = ('-hikes.trail','-users.trails',)
 
     #validations
 
@@ -74,7 +74,9 @@ class Hike(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     trail_id = db.Column(db.Integer, db.ForeignKey('trails.id'), nullable=False)
-    difficulty = db.Column(db.Integer) # <-- perceived difficulty
+    difficulty = db.Column(db.Integer) # <-- perceived difficulty -/5
+    rating = db.Column(db.Integer) # <-- enjoyment of hike -/5
+    review = db.Column(db.String) # <-- user comments on hike
 
     #relationships
     user = db.relationship('User',back_populates='hikes')
@@ -91,4 +93,4 @@ class Hike(db.Model, SerializerMixin):
         return new_diffficulty
 
     def __repr__(self):
-        return f'<user_id:{self.user_id}, trail:{self.trail_id}, difficulty:{self.difficulty}>'
+        return f'<user_id:{self.user_id}, trail:{self.trail_id}, difficulty:{self.difficulty}, rating:{self.rating}, review:{self.review}>'
