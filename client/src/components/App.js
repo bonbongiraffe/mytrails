@@ -1,6 +1,4 @@
-import '../App.css';
-import {useState, useEffect} from "react"
-import NavBar from "./NavBar.js"
+import '../styling/App.css';
 import {Route, Routes, BrowserRouter} from "react-router-dom";
 import Authentication from "./Authentication";
 import Home from "./Home"
@@ -12,7 +10,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Authentication />
-        <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='hikes' element={<HikePage />} />
