@@ -38,6 +38,18 @@ class Hikes(Resource):
         hikes = [h.to_dict() for h in Hike.query.all()]
         return make_response(hikes,200)
 
+class Login(Resource):
+    def post(self):
+        data = request.get_json()
+        user = User.query.filter_by(username = data["username"]).first()
+        if not user:
+            return make_response({"error": "User not found"}, 400)
+        elif user.authenticate(data["password"]):
+            return make_response(user.to_dict(), 200)
+        else:
+            return make_response({"error": "Incorrect password"}, 400)
+
+class Signup(Resource):
     def post(self):
         data = request.get_json()
         try:
@@ -57,6 +69,8 @@ class Hikes(Resource):
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
 api.add_resource(Hikes,'/hikes')
+api.add_resource(Signup,'/signup')
+api.add_resource(Login,'/login')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
