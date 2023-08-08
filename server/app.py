@@ -30,7 +30,7 @@ class Users(Resource):
 
 class Trails(Resource):
     def get(self):
-        trails = [t.to_dict() for t in Trail.query.all()]
+        trails = [t.to_dict(rules=('-hikes',)) for t in Trail.query.all()]
         return make_response(trails,200)
 
 class Hikes(Resource):
