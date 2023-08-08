@@ -11,12 +11,12 @@ function App() {
 
   return (
     <div className="App">
-      <Authentication setUser={setUser}/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='hikes' element={<HikePage />} />
-        <Route path='social' element={<Social />} />
-      </Routes>
+        <Authentication setUser={setUser}/>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='hikes' element={<HikePage />} />
+          <Route path='social' element={<Social />} />
+        </Routes>      
     </div>
   );
 }
