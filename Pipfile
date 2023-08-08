@@ -11,6 +11,7 @@ flask-sqlalchemy = "*"
 ipdb = "*"
 flask-restful = "*"
 flask-bcrypt = "*"
+flask-cors = "*"
 
 [dev-packages]
 
