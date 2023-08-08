@@ -7,7 +7,7 @@ import HikePage from "./HikePage"
 import Social from "./Social"
 
 function App() {
-  const [ user, setUser ] = useState({})
+  const [ user, setUser ] = useState(null)
 
   useEffect(()=>{
     fetchUser()
@@ -16,10 +16,11 @@ function App() {
   const fetchUser = () => {
     fetch("http://localhost:5555/authorized")
       .then( r => {
-        if (r.ok)
-          r.json()
+        if (r.ok) {
+          r.json().then( user => console.log(user) )
+        }
       })
-      .then( user => console.log(user) )
+      
   }
 
   return (
