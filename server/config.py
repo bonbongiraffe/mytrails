@@ -28,3 +28,5 @@ Migrate( app, db )
 db.init_app( app )
 api = Api( app )
 bcrypt = Bcrypt( app )
+
+app.secret_key = 'abscfw'
