@@ -38,18 +38,6 @@ class Hikes(Resource):
         hikes = [h.to_dict() for h in Hike.query.all()]
         return make_response(hikes,200)
 
-class Login(Resource):
-    def post(self):
-        data = request.get_json()
-        user = User.query.filter_by(username = data["username"]).first()
-        if not user:
-            return make_response({"error": "User not found"}, 400)
-        elif user.authenticate(data["password"]):
-            return make_response(user.to_dict(), 200)
-        else:
-            return make_response({"error": "Incorrect password"}, 400)
-
-class Signup(Resource):
     def post(self):
         data = request.get_json()
         try:
@@ -65,6 +53,31 @@ class Signup(Resource):
             return make_response(new_hike.to_dict(),201)
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
+
+class Login(Resource):
+    def post(self):
+        data = request.get_json()
+        user = User.query.filter_by(username = data["username"]).first()
+        if not user:
+            return make_response({"error": "User not found"}, 400)
+        elif user.authenticate(data["password"]):
+            return make_response(user.to_dict(only=('username','id')), 200)
+        else:
+            return make_response({"error": "Incorrect password"}, 400)
+
+class Signup(Resource):
+    def post(self):
+        data = request.get_json()
+        try:
+            new_user = User(
+                username=data["username"],
+                password_hash=data["password"]
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            return make_response(new_user.to_dict(only=('username','id')), 201)
+        except ValueError as v_error:
+            return make_response({"error":[v_error]}, 400)    
 
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
