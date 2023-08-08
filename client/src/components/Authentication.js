@@ -1,4 +1,4 @@
-import { useEffect,useState } from "React"
+import { useState } from "React"
 
 function Authentication({ setUser }){
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
