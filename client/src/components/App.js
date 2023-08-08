@@ -9,6 +9,19 @@ import Social from "./Social"
 function App() {
   const [ user, setUser ] = useState({})
 
+  useEffect(()=>{
+    fetchUser()
+  },[])
+
+  const fetchUser = () => {
+    fetch("http://localhost:5555/authorized")
+      .then( r => {
+        if (r.ok)
+          r.json()
+      })
+      .then( user => console.log(user) )
+  }
+
   return (
     <div className="App">
       <Authentication setUser={setUser}/>
