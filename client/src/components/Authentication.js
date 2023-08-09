@@ -13,12 +13,22 @@ function Authentication({ setUser, navigate }){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData)
         })
-            .then( r => r.json())
+            .then( r => {
+                if (r.ok) {
+                    return r.json()
+                } else {
+                    throw new Error('Request failed')
+                }
+            })
             .then( user => {
                 if (user)
                     setFormData({username:"",password:""})
                 setUser(user)
                 navigate('home')
+            })
+            .catch( error => {
+                console.log("Invalid login")
+                setFormData({username:"",password:""})
             })
     }
 

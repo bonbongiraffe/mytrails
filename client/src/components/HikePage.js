@@ -2,12 +2,7 @@ import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
 import {Card} from "semantic-ui-react"
-<<<<<<< HEAD
-=======
 import '../styling/Hike.css'
-
-
->>>>>>> master
 
 function HikePage({user}){
     const [hikes, setHikes] = useState([])
