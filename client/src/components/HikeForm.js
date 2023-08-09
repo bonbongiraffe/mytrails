@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 
 function HikeForm({ user, trail=null }){
     const [formData, setFormData] = useState({difficulty:0,rating:0,review:""})
@@ -29,6 +29,9 @@ function HikeForm({ user, trail=null }){
                         difficulty= "difficulty"
                         placeholder="difficulty"
                         className="input-number"
+                        min={1}
+                        max={5}
+                        step={1}
                         value={formData.difficulty}
                     ></input>
                 </label>
@@ -39,6 +42,9 @@ function HikeForm({ user, trail=null }){
                         rating= "rating"
                         placeholder="rating"
                         className="input-number"
+                        min={1}
+                        max={5}
+                        step={1}
                         value={formData.rating}
                     ></input>
                 </label>
