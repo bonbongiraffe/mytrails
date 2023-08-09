@@ -21,7 +21,7 @@ function HikeCard({trailName, trailLocation, trailPark, difficulty, rating, revi
                         <p className='trail-difficulty'> {'🥾'.repeat(difficulty)}</p>
                         <p className="trail-card-title">My Rating:</p>
                         <p className='trail-rating'> {'⭐️'.repeat(rating)}</p>
-                        <p className='trail-review'>{review}</p>
+                        <p className='trail-review'>"{review}"</p>
                     </div>
                 </div>
             </div>
