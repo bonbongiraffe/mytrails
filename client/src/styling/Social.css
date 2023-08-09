@@ -1,0 +1,31 @@
+.user-cards-list{
+    padding-top: 175px;
+    padding-bottom: 100px;
+    margin: 0 45px 0 45px;
+}
+
+.user-cards-header{
+    color: #3a4928;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.user-card{
+    cursor: pointer;
+    padding: 20px 10px;
+    background-color: #fffaed;
+}
+
+.user-card-content{
+    color: #4b6b3c;
+}
+
+.card-username{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.user-card-title{
+    font-weight: bold;
+}

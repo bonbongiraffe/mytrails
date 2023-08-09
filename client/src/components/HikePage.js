@@ -14,8 +14,7 @@ useEffect(() => {
     .then(data => 
         setHikes(data))
 }, [])
-console.log(user)
-console.log(hikes)
+
 
 const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
     return (
