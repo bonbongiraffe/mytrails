@@ -25,10 +25,10 @@ function App() {
 
   return (
     <div className="App">
-
+      {user ? <NavBar user={user} setUser={setUser} navigate={navigate}/> : null}
       <Routes>
         <Route path='/' element={<Authentication  setUser={setUser} navigate={navigate}/>}></Route>
-        <Route path='home' element={<Home user={user} setUser={setUser} navigate={navigate}/>} />
+        <Route path='home' element={<Home />} />
         <Route path='hikes' element={<HikePage />} />
         <Route path='social' element={<Social />} />
       </Routes>
