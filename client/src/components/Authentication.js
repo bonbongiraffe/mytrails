@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../styling/Auth.css'
 
 function Authentication({ setUser, navigate }){
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
@@ -24,8 +25,10 @@ function Authentication({ setUser, navigate }){
 
     return(
         <div className="authentication">
+            <p className="welcome">Welcome to My Hikes!</p>
+            <p className="continue">To continue, please Login or Signup.</p>
             {isLogin === 0 ? 
-            <div className="login or signup">
+            <div className="login-or-signup">
                 <button onClick={(e)=>{setIsLogin(1)}}>Login</button>
                 <button onClick={(e)=>{setIsLogin(2)}}>Signup</button>
             </div>
