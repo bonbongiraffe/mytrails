@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Authentication  setUser={setUser} navigate={navigate}/>}></Route>
         <Route path='home' element={<Home />} />
-        <Route path='hikes' element={<HikePage />} />
+        <Route path='hikes' element={<HikePage user = {user}/>} />
         <Route path='social' element={<Social />} />
       </Routes>
     </div>
