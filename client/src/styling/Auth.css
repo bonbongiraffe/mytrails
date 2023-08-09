@@ -25,3 +25,55 @@
 .login-or-signup :hover{
     opacity: 0.6;
 }
+
+
+.form-div{
+    display: flex;
+    justify-content: center;
+}
+
+.login-signup-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 35%; 
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.input-text{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #fffaed;
+    color: #3a4928;
+}
+/* 
+.input-text:focus{
+    background-color: #fffaed;
+    color: #3a4928;
+} */
+
+.submit-btn{
+    margin: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #fffaed;
+    color: #3a4928;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    opacity: 0.6;
+}
