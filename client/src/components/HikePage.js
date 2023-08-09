@@ -2,12 +2,9 @@ import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
 import {Card} from "semantic-ui-react"
-<<<<<<< HEAD
-=======
 import '../styling/Hike.css'
 
 
->>>>>>> master
 
 function HikePage({user}){
     const [hikes, setHikes] = useState([])
@@ -41,8 +38,8 @@ function HikePage({user}){
 
     return (
         <div className='hike-page'>
-            <h1 className="hike-list-header">My Hikes</h1>
             <div className='hike-list'>
+            <h1 className="hike-list-header">My Hikes</h1>
                 <Card.Group itemsPerRow={3}>
                     {eachHike}
                 </Card.Group>
