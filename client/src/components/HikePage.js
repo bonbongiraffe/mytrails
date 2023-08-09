@@ -2,6 +2,12 @@ import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
 import {Card} from "semantic-ui-react"
+<<<<<<< HEAD
+=======
+import '../styling/Hike.css'
+
+
+>>>>>>> master
 
 function HikePage({user}){
     const [hikes, setHikes] = useState([])
@@ -17,6 +23,10 @@ function HikePage({user}){
         setHikes([...hikes, newHike])
     }
 
+    useEffect(() => {
+        document.title="My Trails | My Hikes"
+    }, [])
+
     const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
         return (
             <HikeCard   key = {filteredHike.id}
@@ -31,6 +41,7 @@ function HikePage({user}){
 
     return (
         <div className='hike-page'>
+            <h1 className="hike-list-header">My Hikes</h1>
             <div className='hike-list'>
                 <Card.Group itemsPerRow={3}>
                     {eachHike}

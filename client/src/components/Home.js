@@ -12,6 +12,10 @@ useEffect(() => {
     .then(data => setTrails(data))
 },[])
 
+useEffect(() => {
+    document.title="My Trails | Home"
+}, [])
+
 const eachTrail = trails.map(trail => {
     return (
         <TrailCard
