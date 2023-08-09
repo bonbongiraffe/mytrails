@@ -4,7 +4,7 @@ import '../styling/Home.css'
 function TrailCard({name, location, park}){
 
     return (
-        <Card style={{border: '5px solid #614c33'}}>
+        <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>
             <div className="trail-card">
                 <div className="trailcard-content">
                     <p className="trail-name">{name}</p>
