@@ -5,6 +5,7 @@ import Authentication from "./Authentication";
 import Home from "./Home"
 import HikePage from "./HikePage"
 import Social from "./Social"
+import NavBar from "./NavBar"
 
 function App() {
   const [ user, setUser ] = useState(null)
