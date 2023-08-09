@@ -1,38 +1,44 @@
 import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
+import {Card} from "semantic-ui-react"
 
 function HikePage({user}){
     const [hikes, setHikes] = useState([])
 
-useEffect(() => {
-    fetch('/hikes')
-    .then(r => r.json())
-    .then(data => 
-        setHikes(data))
-}, [])
-console.log(user)
-console.log(hikes)
+    useEffect(() => {
+        fetch('/hikes')
+        .then(r => r.json())
+        .then(data => 
+            setHikes(data))
+    }, [])
 
-const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
+    const addNewHike = (newHike) => {
+        setHikes([...hikes, newHike])
+    }
+
+    const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
+        return (
+            <HikeCard   key = {filteredHike.id}
+                        trailName={filteredHike.trail.name}
+                        trailLocation={filteredHike.trail.location}
+                        trailPark={filteredHike.trail.park}
+                        difficulty={filteredHike.difficulty}
+                        rating={filteredHike.rating}
+                        review={filteredHike.review}/>
+        )
+    })
+
     return (
-        <HikeCard   key = {filteredHike.id}
-                    trailName={filteredHike.trail.name}
-                    trailLocation={filteredHike.trail.location}
-                    trailPark={filteredHike.trail.park}
-                    difficulty={filteredHike.difficulty}
-                    rating={filteredHike.rating}
-                    review={filteredHike.review}/>
-    )
-})
-
-
-    return (
-        <div className='hike-list'>
-
-            <Card.Group itemsPerRow={3}>
-                {eachHike}
-            </Card.Group>
+        <div className='hike-page'>
+            <div className='hike-list'>
+                <Card.Group itemsPerRow={3}>
+                    {eachHike}
+                </Card.Group>
+            </div>
+            <div className='hike-form'>
+                <HikeForm user={user} addNewHike={addNewHike}/>
+            </div>
         </div>
     )
 }

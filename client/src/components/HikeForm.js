@@ -1,18 +1,41 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-function HikeForm({ user, trail=null }){
-    const [formData, setFormData] = useState({difficulty:0,rating:0,review:""})
+function HikeForm({ user, trail=null, addNewHike }){
+    const [ formData, setFormData ] = useState({difficulty:0,rating:0,review:""})
+    const [ inputTrail, setInputTrail  ] = useState("")
+    const [ trailNames, setTrailNames ] = useState([])
+    // const [ selectedTrail, setSelectedTrail ] = useState(null)
+
+    useEffect(() => {
+        fetch('/trails')
+            .then(r => r.json())
+            .then(trails => setTrailNames(trails.map(trail => trail.name)))
+    },[])
+
+    const handleTabPress = (e) => {
+        const matchingTrail = trailNames.find((trail) =>
+            trail.toLowerCase().startsWith(inputTrail.toLowerCase())
+        )
+        // console.log(trailNames.indexOf(inputTrail)+1)
+        // console.log(matchingTrail)
+        if (e.key === 'Tab'){
+            e.preventDefault()
+            setInputTrail(matchingTrail)
+        }
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formData)
+        //console.log(formData)
         fetch('/hikes',{
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({...formData, user_id: user.id})
+            body: JSON.stringify({...formData, user_id: user.id,
+                trail_id: trailNames.indexOf(inputTrail)+1
+            })
         })
             .then( r => r.json())
-            .then( newHike => console.log(newHike))
+            .then( newHike => addNewHike(newHike))
     }
 
     if (!!trail){
@@ -25,11 +48,9 @@ function HikeForm({ user, trail=null }){
                 <label htmlFor="difficulty">Difficulty
                     <input
                         onChange= {(e)=>{setFormData({...formData, difficulty: parseInt(e.target.value)})}}
-                        type="number"
-                        difficulty= "difficulty"
-                        placeholder="difficulty"
-                        className="input-number"
-                        min={1}
+                        type="range"
+                        className="input-range"
+                        min={0}
                         max={5}
                         step={1}
                         value={formData.difficulty}
@@ -38,11 +59,9 @@ function HikeForm({ user, trail=null }){
                 <label htmlFor="rating">Rating
                     <input
                         onChange= {(e)=>{setFormData({...formData, rating: parseInt(e.target.value)})}}
-                        type="number"
-                        rating= "rating"
-                        placeholder="rating"
-                        className="input-number"
-                        min={1}
+                        type="range"
+                        className="input-range"
+                        min={0}
                         max={5}
                         step={1}
                         value={formData.rating}
@@ -53,7 +72,7 @@ function HikeForm({ user, trail=null }){
                         onChange= {(e)=>{setFormData({...formData, review: e.target.value})}}
                         type="text"
                         review= "review"
-                        placeholder="review"
+                        placeholder="Write your comments here..."
                         className="input-text"
                         value={formData.review}
                     ></input>
@@ -61,18 +80,18 @@ function HikeForm({ user, trail=null }){
                 {trail ? 
                 null
                 :
-                <label htmlFor="trailId">Trail Id
+                <label htmlFor="trailId">Trail Name
                     <input
-                        onChange= {(e)=>{setFormData({...formData, trail_id: parseInt(e.target.value)})}}
-                        type="number"
-                        trailId= "trailId"
-                        placeholder="trail_id"
-                        className="input-number"
-                        value={formData.trailId}
+                        onChange={(e) => setInputTrail(e.target.value)}
+                        onKeyDown={handleTabPress}
+                        type="text"
+                        placeholder="Trail name here..."
+                        className="input-text"
+                        value={inputTrail}
                     ></input>
                 </label>
                 }
-                <button type="submit">Submit</button>
+                {trailNames.includes(inputTrail) ? <button type="submit">Submit</button> : <p>Incomplete form</p> }
             </form>
         </div>
     )
