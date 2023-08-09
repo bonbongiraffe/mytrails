@@ -1,6 +1,6 @@
 import {Card} from "semantic-ui-react"
 
-function TrailCard({key, name, location, park}){
+function TrailCard({name, location, park}){
 
     return (
         <Card >

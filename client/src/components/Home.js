@@ -14,11 +14,11 @@ useEffect(() => {
 
 const eachTrail = trails.map(trail => {
     return (
-        <TrailCard key ={trail.id}
-                    name = {trail.name}
-                    location = {trail.location}
-                    park={trail.park}
-                    />
+        <TrailCard
+            name = {trail.name}
+            location = {trail.location}
+            park={trail.park}
+        />
     )
 })
 
