@@ -20,7 +20,6 @@ function Authentication({ setUser, navigate }){
                 setUser(user)
                 navigate('home')
             })
-            // need catch statement
     }
 
     return(
@@ -39,7 +38,7 @@ function Authentication({ setUser, navigate }){
                         <input 
                             onChange= {(e)=>{setFormData({...formData, username: e.target.value})}}
                             type="text"
-                            username= "username"
+                            name= "username"
                             placeholder="username"
                             className="input-text"
                             value={formData.username}
@@ -48,7 +47,7 @@ function Authentication({ setUser, navigate }){
                         <input 
                             onChange= {(e)=>{setFormData({...formData, password: e.target.value})}}
                             type="password"
-                            password= "password"
+                            name= "password"
                             placeholder="password"
                             className="input-text"
                             value={formData.password}

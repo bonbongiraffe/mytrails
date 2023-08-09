@@ -52,16 +52,16 @@ label{
     height: 30px;
     text-align: center;
     border-radius: 10px;
-    border: transparent;
+    border: none;
     outline: none;
     background-color: #fffaed;
     color: #3a4928;
 }
-
+/* 
 .input-text:focus{
     background-color: #fffaed;
     color: #3a4928;
-}
+} */
 
 .submit-btn{
     margin: 30px;
