@@ -1,12 +1,11 @@
 import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import NavBar from "./NavBar"
-import { Card} from "semantic-ui-react"
 import { React, useState, useEffect }from "react"
 
 
 
-function HikePage(){
+function HikePage({user}){
     const [hikes, setHikes] = useState([])
 
 useEffect(() => {
@@ -17,7 +16,7 @@ useEffect(() => {
     return (
         <div>
             <HikeCard />
-            <HikeForm />
+            <HikeForm user={user}/>
         </div>
     )
 }
