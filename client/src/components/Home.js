@@ -1,6 +1,6 @@
 import { React, useState, useEffect }from "react"
 import TrailCard from "./TrailCard"
-import NavBar from "./NavBar.js"
+import '../styling/Home.css'
 import { Card} from "semantic-ui-react"
 
 function Home(){
