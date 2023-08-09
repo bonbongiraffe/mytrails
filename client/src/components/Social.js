@@ -13,13 +13,17 @@ useEffect(() => {
     .then(data => setUsers(data))
 }, [])
 
-
 const eachUser = users.filter(eachUser => eachUser.id !== user.id).map(filteredUser => {
     return <UserCard key={filteredUser.id}
                     name={filteredUser.username}
                     hikes={filteredUser.hikes}
                     />
 })
+
+    useEffect(() => {
+        document.title="My Trails | Social"
+    }, [])
+
     return (
         <div className='user-cards-list'>
             <h1 className='user-cards-header'>Friends</h1>
