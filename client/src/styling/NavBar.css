@@ -6,7 +6,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    height: 80px;
+    height: 100px;
     padding-bottom: 10px;
     padding-top: 10px;
     border-bottom: .5px solid#e8e9eb;
@@ -20,6 +20,26 @@
     padding-right: 25px;
     float:right;
 }
+
+
+/* LOGO */
+.left-side-nav {
+    font-size: 40px;
+    font-weight: bold;
+    float: left;
+    display: inline-flex;
+    padding-left: 25px;
+}
+
+
+/* WELCOME, USER */
+.center-nav{
+    font-size: 25px;
+    padding-left: 15%;
+}
+
+
+/* THE LINKS */
 .nav-bar-list{
     padding-left: 20px;
     padding-right: 20px;
@@ -32,16 +52,15 @@
     width:100%;
     text-decoration: none;
     color:#e6deb9;
+    cursor: pointer;
 }
 .nav-bar-link:hover{
+    color:#e6deb9;
     opacity: 0.6;
 }
-
-
-.left-side-nav {
-    font-size: 40px;
-    font-weight: bold;
-    float: left;
-    display: inline-flex;
-    padding-left: 25px;
+/* LOGOUT BUTTON */
+button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
