@@ -90,6 +90,11 @@ def authorized():
     except:
         return make_response({"error": "Please log in or sign up"}, 401)
 
+@app.route('/logout', methods=["DELETE"])
+def logout():
+    del session['user_id']
+    return make_response({"message": "logout successful"}, 204)
+
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
 api.add_resource(Hikes,'/hikes')

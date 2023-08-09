@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Authentication({ setUser }){
+function Authentication({ setUser, navigate }){
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:""}) // holds login form data
 
@@ -13,7 +13,13 @@ function Authentication({ setUser }){
             body: JSON.stringify(formData)
         })
             .then( r => r.json())
-            .then( user => console.log(user))
+            .then( user => {
+                if (user)
+                    setFormData({username:"",password:""})
+                setUser(user)
+                navigate('home')
+            })
+            // need catch statement
     }
 
     return(

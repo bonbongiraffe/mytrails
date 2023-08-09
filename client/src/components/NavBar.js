@@ -1,15 +1,32 @@
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+function NavBar( { user, setUser, navigate } ) {    
+
+    const handleLogout = () => {
+    fetch("/logout",{
+      method: "DELETE"
+    })
+      .then( r => {
+        if (r.ok) {
+          setUser(null)
+          navigate('/')
+        }
+      })
+    }
+
     return (
         <div className="header">
             <div className="left-side-nav">
                 <p>My Trails</p>
             </div>
+            <div className="center-nav">
+                {user ? <h1>Welcome, {user.username}</h1> : null}
+            </div>
             <div className="nav-bar">
-                <li className="nav-bar-list"><NavLink className="nav-bar-link" to="/">Home</NavLink></li>
+                <li className="nav-bar-list"><NavLink className="nav-bar-link" to="home">Home</NavLink></li>
                 <li className="nav-bar-list"><NavLink className="nav-bar-link" to="hikes">My Hikes</NavLink></li>
                 <li className="nav-bar-list"><NavLink className="nav-bar-link" to="social">Social</NavLink></li>
+                <li className="nav-bar-list"><button className="nav-bar-link" onClick={handleLogout}>Logout</button></li>
             </div>
         </div>
 
