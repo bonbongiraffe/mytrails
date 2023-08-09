@@ -1,19 +1,25 @@
 import { useState } from "react"
 
-function Authentication({ setUser }){
+function Authentication({ setUser, navigate }){
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:""}) // holds login form data
 
     function handleSubmit(e){
         e.preventDefault()
         const route = isLogin === 1 ? "login" : "signup"
-        fetch(`http://localhost:5555/${route}`,{
+        fetch(`/${route}`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData)
         })
             .then( r => r.json())
-            .then( user => console.log(user))
+            .then( user => {
+                if (user)
+                    setFormData({username:"",password:""})
+                setUser(user)
+                navigate('home')
+            })
+            // need catch statement
     }
 
     return(

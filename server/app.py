@@ -60,7 +60,7 @@ def login():
     user = User.query.filter_by(username = data["username"]).first()
     if not user:
         return make_response({"error": "User not found"}, 400)
-    elif user.authenticate(data["password"]):
+    if user.authenticate(data["password"]):
         session["user_id"] = user.id
         print(session["user_id"])
         return make_response(user.to_dict(only=('username','id')), 200)
@@ -85,10 +85,15 @@ def signup():
 @app.route('/authorized', methods=["GET"])
 def authorized():
     try:
-        user = User.query.filter_by(id=session["user_id"]).first()
+        user = User.query.filter_by(id=session.get("user_id")).first()
         return make_response( user.to_dict(only=('username','id')), 200)
     except:
         return make_response({"error": "Please log in or sign up"}, 401)
+
+@app.route('/logout', methods=["DELETE"])
+def logout():
+    del session['user_id']
+    return make_response({"message": "logout successful"}, 204)
 
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
