@@ -5,18 +5,24 @@ function HikeCard({trailName, trailLocation, trailPark, difficulty, rating, revi
 
 
     return(
-        <Card>
+        <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>
             <div className='hike-card'>
-                <div className="trailcard-image">
-                    <img />
-                </div>
                 <div className='trail-content'>
-                    <div className='trail-name'>{trailName}</div>
-                    <p className='trail-location'>{trailLocation}</p>
-                    <p className='trail-park'>{trailPark}</p>
-                    <p className='trail-difficulty'>Difficulty: {'🥾'.repeat(difficulty)}</p>
-                    <p className='trail-rating'>My Rating: {'⭐️'.repeat(rating)}</p>
-                    <p className='trail-review'>{review}</p>
+                    {/* <div className="trailcard-image">
+                        <img />
+                    </div> */}
+                    <div className="hike-card-info">
+                        <div className='trail-name'>{trailName}</div>
+                        <p className="trail-card-title">Location:</p>
+                        <p className='trail-location'>{trailLocation}</p>
+                        <p className="trail-card-title">Park:</p>
+                        <p className='trail-park'>{trailPark}</p>
+                        <p className="trail-card-title">Difficulty:</p>
+                        <p className='trail-difficulty'> {'🥾'.repeat(difficulty)}</p>
+                        <p className="trail-card-title">My Rating:</p>
+                        <p className='trail-rating'> {'⭐️'.repeat(rating)}</p>
+                        <p className='trail-review'>{review}</p>
+                    </div>
                 </div>
             </div>
         </Card>

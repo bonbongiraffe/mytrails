@@ -2,6 +2,7 @@ import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
 import {Card} from "semantic-ui-react"
+import '../styling/Hike.css'
 
 
 
@@ -32,7 +33,7 @@ const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHi
 
     return (
         <div className='hike-list'>
-
+            <h1 className="hike-list-header">My Hikes</h1>
             <Card.Group itemsPerRow={3}>
                 {eachHike}
             </Card.Group>

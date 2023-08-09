@@ -1,22 +1,22 @@
-.trail-list{
+.hike-list{
     padding-top: 175px;
     padding-bottom: 100px;
     margin: 0 45px 0 45px;
     height: 100vh;
 }
 
-.trail-list-header{
+.hike-list-header{
     color: #3a4928;
     font-size: 35px;
     margin-bottom: 50px;
 }
 
-.trail-card{
+.hike-card{
     cursor: pointer;
     padding: 20px 10px;
 }
 
-.trailcard-content{
+.trail-content{
     color: #4b6b3c;
 }
 
@@ -26,14 +26,12 @@
     margin-bottom: 15px;
 }
 
-.trail-card-info p{
+.hike-card-info p{
     margin: 0;
-}
-
-.trail-location{
-    padding-bottom: 10px;
 }
 
 .trail-card-title{
     font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 2px;
 }
