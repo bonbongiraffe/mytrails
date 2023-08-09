@@ -1,6 +1,7 @@
 import HikeCard from "./HikeCard"
 import HikeForm from "./HikeForm"
 import { React, useState, useEffect }from "react"
+import {Card} from "semantic-ui-react"
 
 
 
