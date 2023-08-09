@@ -7,8 +7,9 @@ from config import app, api, db
 
 @app.route('/')
 def index():
-    return '<h1>Happy Trails!</h1>'
+    return '<h1>My (Happy) Trails!</h1>'
 
+# models
 class Users(Resource):
     def get(self):
         users = [u.to_dict() for u in User.query.all()]
@@ -54,6 +55,7 @@ class Hikes(Resource):
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
 
+# user login and auth
 @app.route('/login', methods=["POST"])
 def login():
     data = request.get_json()

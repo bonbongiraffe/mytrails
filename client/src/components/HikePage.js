@@ -5,7 +5,6 @@ import NavBar from "./NavBar"
 function HikePage(){
     return (
         <div>
-            <NavBar />
             <HikeCard />
             <HikeForm />
         </div>
