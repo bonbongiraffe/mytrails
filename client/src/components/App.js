@@ -25,14 +25,6 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-        <Authentication setUser={setUser}/>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='hikes' element={<HikePage />} />
-          <Route path='social' element={<Social />} />
-        </Routes>      
-=======
 
       <Routes>
         <Route path='/' element={<Authentication  setUser={setUser} navigate={navigate}/>}></Route>
@@ -40,7 +32,6 @@ function App() {
         <Route path='hikes' element={<HikePage />} />
         <Route path='social' element={<Social />} />
       </Routes>
->>>>>>> master
     </div>
   );
 }
