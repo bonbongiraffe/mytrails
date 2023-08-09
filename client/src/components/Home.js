@@ -1,6 +1,6 @@
 import { React, useState, useEffect }from "react"
 import TrailCard from "./TrailCard"
-import NavBar from "./NavBar.js"
+import '../styling/Home.css'
 import { Card} from "semantic-ui-react"
 
 function Home(){
@@ -23,7 +23,7 @@ const eachTrail = trails.map(trail => {
 })
 
     return(
-        <div classname="trail-list">
+        <div className="trail-list">
             <h1 className="trail-list-header">Trails</h1>
             <Card.Group itemsPerRow={3}>
                 {eachTrail}
