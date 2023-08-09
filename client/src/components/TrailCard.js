@@ -1,6 +1,6 @@
 import {Card} from "semantic-ui-react"
 
-function TrailCard(){
+function TrailCard({key, name, location, park}){
 
     return (
         <Card >
@@ -8,9 +8,9 @@ function TrailCard(){
                 <img />
             </div>
             <div className="trailcard-content">
-                <div className="trail-name"></div>
-                <p className="trail-location"></p>
-                <p className="trail-park"></p>
+                <div className="trail-name">{name}</div>
+                <p className="trail-location">{location}</p>
+                <p className="trail-park">{park}</p>
             </div>
         </Card>
     )
