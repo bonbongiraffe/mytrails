@@ -33,27 +33,29 @@ function Authentication({ setUser, navigate }){
                 <button onClick={(e)=>{setIsLogin(2)}}>Signup</button>
             </div>
             :
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">username</label>
-                    <input 
-                        onChange= {(e)=>{setFormData({...formData, username: e.target.value})}}
-                        type="text"
-                        username= "username"
-                        placeholder="username"
-                        className="input-text"
-                        value={formData.username}
-                    ></input>
-                <label htmlFor="password">password</label>
-                    <input 
-                        onChange= {(e)=>{setFormData({...formData, password: e.target.value})}}
-                        type="password"
-                        password= "password"
-                        placeholder="password"
-                        className="input-text"
-                        value={formData.password}
-                    ></input>
-                <button type="submit">{isLogin === 1 ? "Login" : "Signup"}</button>
-            </form>
+            <div className="form-div">
+                <form className="login-signup-form" onSubmit={handleSubmit}>
+                    <label htmlFor="username">username:</label>
+                        <input 
+                            onChange= {(e)=>{setFormData({...formData, username: e.target.value})}}
+                            type="text"
+                            username= "username"
+                            placeholder="username"
+                            className="input-text"
+                            value={formData.username}
+                        ></input>
+                    <label htmlFor="password">password:</label>
+                        <input 
+                            onChange= {(e)=>{setFormData({...formData, password: e.target.value})}}
+                            type="password"
+                            password= "password"
+                            placeholder="password"
+                            className="input-text"
+                            value={formData.password}
+                        ></input>
+                    <button className="submit-btn" type="submit">{isLogin === 1 ? "Login" : "Signup"}</button>
+                </form>
+            </div>
             }
         </div>
     )
