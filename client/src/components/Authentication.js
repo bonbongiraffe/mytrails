@@ -7,7 +7,7 @@ function Authentication({ setUser }){
     function handleSubmit(e){
         e.preventDefault()
         const route = isLogin === 1 ? "login" : "signup"
-        fetch(`http://localhost:5555/${route}`,{
+        fetch(`/${route}`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData)

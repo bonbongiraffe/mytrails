@@ -14,13 +14,12 @@ function App() {
   },[])
 
   const fetchUser = () => {
-    fetch("http://localhost:5555/authorized")
+    fetch("/authorized")
       .then( r => {
         if (r.ok) {
-          r.json().then( user => console.log(user) )
+          r.json().then( user => setUser(user) )
         }
       })
-      
   }
 
   return (
