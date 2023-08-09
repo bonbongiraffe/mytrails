@@ -1,10 +1,10 @@
 import TrailCard from "./TrailCard"
 import NavBar from "./NavBar.js"
 
-function Home(){
+function Home({user, setUser, navigate}){
     return(
         <div>
-            <NavBar />
+            <NavBar user={user} setUser={setUser} navigate={navigate}/>
             <TrailCard />
         </div>
     )
