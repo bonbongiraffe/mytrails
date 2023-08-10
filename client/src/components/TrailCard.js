@@ -1,16 +1,17 @@
 import {Card} from "semantic-ui-react"
 import '../styling/Home.css'
 
-function TrailCard({name, location, park}){
+function TrailCard({name, location, park, image}){
+    // console.log(image)
 
     return (
         <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>
             <div className="trail-card">
                 <div className="trailcard-content">
                     <p className="trail-name">{name}</p>
-                    {/* <div className="trailcard-image">
-                        <img />
-                    </div> */}
+                    <div className="trailcard-image">
+                        <img src={image} alt={name}/>
+                    </div>
                     <div className="trail-card-info">
                         <p className="trail-card-title">Location:</p>
                         <p className="trail-location">{location}</p>

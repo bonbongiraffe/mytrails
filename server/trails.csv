@@ -1,50 +1,50 @@
-Trail Name,Trail Location,Park
-Angels Landing,"Zion National Park, Utah",Zion National Park
-John Muir Trail,"Sierra Nevada, California",Yosemite National Park
-Half Dome,"Yosemite National Park, California",Yosemite National Park
-Bright Angel Trail,"Grand Canyon, Arizona",Grand Canyon National Park
-The Long Trail,Vermont,Green Mountain National Forest
-Harding Icefield Trail,"Kenai Fjords National Park, Alaska",Kenai Fjords National Park
-Appalachian Trail,Eastern United States,Multiple Locations
-Highline Trail,"Glacier National Park, Montana",Glacier National Park
-Pacific Crest Trail,"West Coast, United States",Multiple Locations
-Teton Crest Trail,"Grand Teton National Park, Wyoming",Grand Teton National Park
-Wonderland Trail,"Mount Rainier National Park, Washington",Mount Rainier National Park
-West Maroon Creek Trail,"Aspen, Colorado",White River National Forest
-South Kaibab Trail,"Grand Canyon, Arizona",Grand Canyon National Park
-Kalalau Trail,"Kauai, Hawaii",Na Pali Coast State Park
-Mount Whitney Trail,"Sierra Nevada, California",Sequoia National Park
-Old Rag Mountain Hike,"Shenandoah National Park, Virginia",Shenandoah National Park
-Grinnell Glacier Trail,"Glacier National Park, Montana",Glacier National Park
-Mount Mitchell Summit,"Mount Mitchell State Park, North Carolina",Mount Mitchell State Park
-Hoh River Trail,"Olympic National Park, Washington",Olympic National Park
-Pemi Loop,"White Mountains, New Hampshire",White Mountain National Forest
-Franconia Ridge Traverse,"White Mountains, New Hampshire",White Mountain National Forest
-Conundrum Hot Springs,"Aspen, Colorado",White River National Forest
-The Presidential Traverse,"White Mountains, New Hampshire",White Mountain National Forest
-Mist Trail,"Yosemite National Park, California",Yosemite National Park
-Mount Katahdin,"Baxter State Park, Maine",Baxter State Park
-Cascade Canyon Trail,"Grand Teton National Park, Wyoming",Grand Teton National Park
-Sky Pond via Glacier Gorge Trail,"Rocky Mountain National Park, Colorado",Rocky Mountain National Park
-Rim-to-Rim Hike,"Grand Canyon, Arizona",Grand Canyon National Park
-Lost Coast Trail,"King Range, California",King Range National Conservation Area
-Mount Elbert,"Leadville, Colorado",San Isabel National Forest
-Breakneck Ridge Trail,"Hudson Highlands State Park, New York",Hudson Highlands State Park
-Fairyland Loop Trail,"Bryce Canyon National Park, Utah",Bryce Canyon National Park
-Mount Washington via Lion Head Trail,"White Mountains, New Hampshire",White Mountain National Forest
-Mount Timpanogos,"Utah County, Utah",Uinta-Wasatch-Cache National Forest
-Zion Narrows,"Zion National Park, Utah",Zion National Park
-Black Elk Peak,"Custer State Park, South Dakota",Black Hills National Forest
-Mount LeConte via Alum Cave Trail,"Great Smoky Mountains National Park, Tennessee",Great Smoky Mountains National Park
-Mount Mansfield,"Stowe, Vermont",Mount Mansfield State Forest
-Northville-Placid Trail,"Adirondack Park, New York",Adirondack Park
-Art Loeb Trail,"Pisgah National Forest, North Carolina",Pisgah National Forest
-Enchanted Rock Loop Trail,"Fredericksburg, Texas",Enchanted Rock State Natural Area
-Ice Age National Scenic Trail,Wisconsin,Multiple Locations
-Ozette Triangle Loop Trail,"Olympic National Park, Washington",Olympic National Park
-Mount Tallac Trail,"El Dorado County, California",Desolation Wilderness
-La Luz Trail,"Albuquerque, New Mexico",Cibola National Forest
-Longs Peak via Keyhole Route,"Rocky Mountain National Park, Colorado",Rocky Mountain National Park
-Precipice Trail,"Acadia National Park, Maine",Acadia National Park
-Saddleback Mountain via Appalachian Trail,"Rangeley, Maine",Appalachian Trail
-Barr Trail,"Manitou Springs, Colorado",Pike National Forest
+Trail Name,Trail Location,Park,Image Path
+Angels Landing,"Zion National Park, Utah",Zion National Park,http://localhost:5555/static/trail_photos/angels-landing.jpg
+John Muir Trail,"Sierra Nevada, California",Yosemite National Park,http://localhost:5555/static/trail_photos/john-muir-trail.jpg
+Half Dome,"Yosemite National Park, California",Yosemite National Park,http://localhost:5555/static/trail_photos/half-dome.jpg
+Bright Angel Trail,"Grand Canyon, Arizona",Grand Canyon National Park,http://localhost:5555/static/trail_photos/bright-angel-trail.jpg
+The Long Trail,"Vermont, Green Mountain National Forest",Green Mountain National Forest,http://localhost:5555/static/trail_photos/the-long-trail.jpg
+Harding Icefield Trail,"Kenai Fjords National Park, Alaska",Kenai Fjords National Park,http://localhost:5555/static/trail_photos/harding-icefield-trail.jpg
+Appalachian Trail,"Eastern United States, Multiple Locations",Multiple Locations,http://localhost:5555/static/trail_photos/appalachian-trail.jpg
+Highline Trail,"Glacier National Park, Montana",Glacier National Park,http://localhost:5555/static/trail_photos/highline-trail.jpg
+Pacific Crest Trail,"West Coast, United States, Multiple Locations",Multiple Locations,http://localhost:5555/static/trail_photos/pacific-crest-trail.jpg
+Teton Crest Trail,"Grand Teton National Park, Wyoming",Grand Teton National Park,http://localhost:5555/static/trail_photos/teton-crest-trail.jpg
+Wonderland Trail,"Mount Rainier National Park, Washington",Mount Rainier National Park,http://localhost:5555/static/trail_photos/wonderland-trail.jpg
+West Maroon Creek Trail,"Aspen, Colorado",White River National Forest,http://localhost:5555/static/trail_photos/west-maroon-creek-trail.jpg
+South Kaibab Trail,"Grand Canyon, Arizona",Grand Canyon National Park,http://localhost:5555/static/trail_photos/south-kaibab-trail.jpg
+Kalalau Trail,"Kauai, Hawaii",Na Pali Coast State Park,http://localhost:5555/static/trail_photos/kalalau-trail.jpg
+Mount Whitney Trail,"Sierra Nevada, California",Sequoia National Park,http://localhost:5555/static/trail_photos/mount-whitney-trail.jpg
+Old Rag Mountain Hike,"Shenandoah National Park, Virginia",Shenandoah National Park,http://localhost:5555/static/trail_photos/old-rag-mountain-hike.jpg
+Grinnell Glacier Trail,"Glacier National Park, Montana",Glacier National Park,http://localhost:5555/static/trail_photos/grinnell-glacier-trail.jpg
+Mount Mitchell Summit,"Mount Mitchell State Park, North Carolina",Mount Mitchell State Park,http://localhost:5555/static/trail_photos/mount-mitchell-summit.jpg
+Hoh River Trail,"Olympic National Park, Washington",Olympic National Park,http://localhost:5555/static/trail_photos/hoh-river-trail.jpg
+Pemi Loop,"White Mountains, New Hampshire",White Mountain National Forest,http://localhost:5555/static/trail_photos/pemi-loop.jpg
+Franconia Ridge Traverse,"White Mountains, New Hampshire",White Mountain National Forest,http://localhost:5555/static/trail_photos/franconia-ridge-traverse.jpg
+Conundrum Hot Springs,"Aspen, Colorado",White River National Forest,http://localhost:5555/static/trail_photos/conundrum-hot-springs.jpg
+The Presidential Traverse,"White Mountains, New Hampshire",White Mountain National Forest,http://localhost:5555/static/trail_photos/the-presidential-traverse.jpg
+Mist Trail,"Yosemite National Park, California",Yosemite National Park,http://localhost:5555/static/trail_photos/mist-trail.jpg
+Mount Katahdin,"Baxter State Park, Maine",Baxter State Park,http://localhost:5555/static/trail_photos/mount-katahdin.jpg
+Cascade Canyon Trail,"Grand Teton National Park, Wyoming",Grand Teton National Park,http://localhost:5555/static/trail_photos/cascade-canyon-trail.jpg
+Sky Pond via Glacier Gorge Trail,"Rocky Mountain National Park, Colorado",Rocky Mountain National Park,http://localhost:5555/static/trail_photos/sky-pond-via-glacier-gorge-trail.jpg
+Rim-to-Rim Hike,"Grand Canyon, Arizona",Grand Canyon National Park,http://localhost:5555/static/trail_photos/rim-to-rim-hike.jpg
+Lost Coast Trail,"King Range, California",King Range National Conservation Area,http://localhost:5555/static/trail_photos/lost-coast-trail.jpg
+Mount Elbert,"Leadville, Colorado",San Isabel National Forest,http://localhost:5555/static/trail_photos/mount-elbert.jpg
+Breakneck Ridge Trail,"Hudson Highlands State Park, New York",Hudson Highlands State Park,http://localhost:5555/static/trail_photos/breakneck-ridge-trail.jpg
+Fairyland Loop Trail,"Bryce Canyon National Park, Utah",Bryce Canyon National Park,http://localhost:5555/static/trail_photos/fairyland-loop-trail.jpg
+Mount Washington via Lion Head Trail,"White Mountains, New Hampshire",White Mountain National Forest,http://localhost:5555/static/trail_photos/mount-washington-via-lion-head-trail.jpg
+Mount Timpanogos,"Utah County, Utah",Uinta-Wasatch-Cache National Forest,http://localhost:5555/static/trail_photos/mount-timpanogos.jpg
+Zion Narrows,"Zion National Park, Utah",Zion National Park,http://localhost:5555/static/trail_photos/zion-narrows.jpg
+Black Elk Peak,"Custer State Park, South Dakota",Black Hills National Forest,http://localhost:5555/static/trail_photos/black-elk-peak.jpg
+Mount LeConte via Alum Cave Trail,"Great Smoky Mountains National Park, Tennessee",Great Smoky Mountains National Park,http://localhost:5555/static/trail_photos/mount-leconte-via-alum-cave-trail.jpg
+Mount Mansfield,"Stowe, Vermont",Mount Mansfield State Forest,http://localhost:5555/static/trail_photos/mount-mansfield.jpg
+Northville-Placid Trail,"Adirondack Park, New York",Adirondack Park,http://localhost:5555/static/trail_photos/northville-placid-trail.jpg
+Art Loeb Trail,"Pisgah National Forest, North Carolina",Pisgah National Forest,http://localhost:5555/static/trail_photos/art-loeb-trail.jpg
+Enchanted Rock Loop Trail,"Fredericksburg, Texas",Enchanted Rock State Natural Area,http://localhost:5555/static/trail_photos/enchanted-rock-loop-trail.jpg
+Ice Age National Scenic Trail,Wisconsin,Multiple Locations,http://localhost:5555/static/trail_photos/ice-age-national-scenic-trail.jpg
+Ozette Triangle Loop Trail,"Olympic National Park, Washington",Olympic National Park,http://localhost:5555/static/trail_photos/ozette-triangle-loop-trail.jpg
+Mount Tallac Trail,"El Dorado County, California",Desolation Wilderness,http://localhost:5555/static/trail_photos/mount-tallac-trail.jpg
+La Luz Trail,"Albuquerque, New Mexico",Cibola National Forest,http://localhost:5555/static/trail_photos/la-luz-trail.jpg
+Longs Peak via Keyhole Route,"Rocky Mountain National Park, Colorado",Rocky Mountain National Park,http://localhost:5555/static/trail_photos/longs-peak-via-keyhole-route.jpg
+Precipice Trail,"Acadia National Park, Maine",Acadia National Park,http://localhost:5555/static/trail_photos/precipice-trail.jpg
+Saddleback Mountain via Appalachian Trail,"Rangeley, Maine",Appalachian Trail,http://localhost:5555/static/trail_photos/saddleback-mountain-via-appalachian-trail.jpg
+Barr Trail,"Manitou Springs, Colorado",Pike National Forest,http://localhost:5555/static/trail_photos/barr-trail.jpg
