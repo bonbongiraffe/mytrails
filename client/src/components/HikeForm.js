@@ -70,14 +70,14 @@ function HikeForm({ user, trail=null, addNewHike }){
                     ></input>
                 </label>
                 <label htmlFor="review">Review:
-                    <input
+                    <textarea
                         onChange= {(e)=>{setFormData({...formData, review: e.target.value})}}
                         type="text"
                         review= "review"
                         placeholder="Write your comments here..."
                         className="input-comment"
                         value={formData.review}
-                    ></input>
+                    ></textarea>
                 </label>
                 {trail ? 
                 null
