@@ -22,15 +22,23 @@ function HikePage({user}){
         document.title="My Trails | My Hikes"
     }, [])
 
+    const removeHikeCard = (id) => {
+        setHikes((currentHikes) =>
+            currentHikes.filter((hike) => hike.id !== id)
+        )
+    }
+
     const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
         return (
             <HikeCard   key = {filteredHike.id}
+                        id = {filteredHike.id}
                         trailName={filteredHike.trail.name}
                         trailLocation={filteredHike.trail.location}
                         trailPark={filteredHike.trail.park}
                         difficulty={filteredHike.difficulty}
                         rating={filteredHike.rating}
-                        review={filteredHike.review}/>
+                        review={filteredHike.review}
+                        removeHikeCard = {removeHikeCard}/>
         )
     })
 
