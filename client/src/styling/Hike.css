@@ -69,18 +69,22 @@ label{
 }
 
 .input-range::-webkit-slider-runnable-track{
-    background-color: #fffaed;
-    border: 2px solid #3a4928;
+    -webkit-appearance: none;
+    background-color: #fffaed !important;
+    border: 2px solid #3a4928 !important;
     border-radius: 10px;
 }
 
 .input-range::-webkit-scrollbar-track-piece{
-    background-color: #4b6b3c;
+    -webkit-appearance: none;
+    background-color: #4b6b3c !important;
 }
 
 .input-range::-webkit-slider-thumb{
-    background-color: #4b6b3c;
-    border: 2px solid #3a4928;
+    overflow: visible;
+    -webkit-appearance: none;
+    background-color: #4b6b3c !important;
+    border: 2px solid #3a4928 !important;
     cursor: pointer;
 }
 
