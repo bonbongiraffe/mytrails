@@ -2,8 +2,17 @@
 from models import db, User, Hike, Trail
 from flask_restful import Api, Resource
 from flask import request, make_response, session
+from werkzeug.utils import secure_filename
+import os
 
-from config import app, api, db
+from config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# checking file upload type for users images
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/')
 def index():
@@ -71,11 +80,30 @@ def login():
 
 @app.route('/signup', methods=["POST"])
 def signup():
-    data = request.get_json()
+    # this is saving the form data because we are sending both JSON and file data(the image)
+    username = request.form["username"]
+    password = request.form["password"]
+    image_file = request.files['image']
+
+    # Handling Errors: this makes sure that the image file type is one of our allowed file types and makes sure that there is an image in the request
+    if 'image' not in request.files or image_file.filename == '':
+        return make_response({"error": "No image uploaded"}, 400)
+    if not allowed_file(image_file.filename):
+        return make_response({"error": "Invalid file type"}, 400)
+    
+    # getting the filename from the image_file metadata and then using werkzeug's secure_filename() to remove or replace any potentially harmful characters in the filename. Storing new sanitized filename in the filename variable.
+    filename = secure_filename(image_file.filename)
+    # combining multiple paths into a single path using python's os module. Helps ensure the appropriate path for different operating systems. 
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    # save the image file to image_path
+    image_file.save(image_path)
+
+
     try:
         new_user = User(
-            username=data["username"],
-            password_hash=data["password"]
+            username=username,
+            password_hash=password,
+            profile_image=image_path
         )
         db.session.add(new_user)
         db.session.commit()
