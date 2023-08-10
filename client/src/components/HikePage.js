@@ -38,18 +38,13 @@ function HikePage({user}){
         document.title="My Trails | My Hikes"
     }, [])
 
-<<<<<<< HEAD
-    // "?" = optional chaining
-    const eachHike = hikes.filter((hike) => hike.user_id === user?.id).map(filteredHike => {
-=======
     const removeHikeCard = (id) => {
         setHikes((currentHikes) =>
             currentHikes.filter((hike) => hike.id !== id)
         )
     }
 
-    const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
->>>>>>> master
+    const eachHike = hikes.filter((hike) => hike.user_id === user?.id).map(filteredHike => {
         return (
             <HikeCard   key={filteredHike.id}
                         id={filteredHike.id}
