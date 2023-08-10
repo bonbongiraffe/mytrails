@@ -18,6 +18,22 @@ function HikePage({user}){
         setHikes([...hikes, newHike])
     }
 
+    const handleFavorite = (hikeId,updatedVal) => {
+        fetch(`hikes/${hikeId}`,{
+            method: "PATCH",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify({favorite: updatedVal})
+        })
+            .then( r => r.json())
+            .then( updatedHike => setHikes(hikes.map(hike => {
+                if (hike.id !== hikeId){
+                    return hike
+                } else {
+                    return updatedHike
+                }
+            })))
+    }
+
     useEffect(() => {
         document.title="My Trails | My Hikes"
     }, [])
@@ -30,15 +46,17 @@ function HikePage({user}){
 
     const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
         return (
-            <HikeCard   key = {filteredHike.id}
-                        id = {filteredHike.id}
+            <HikeCard   key={filteredHike.id}
+                        id={filteredHike.id}
                         trailName={filteredHike.trail.name}
                         trailLocation={filteredHike.trail.location}
                         trailPark={filteredHike.trail.park}
                         difficulty={filteredHike.difficulty}
                         rating={filteredHike.rating}
                         review={filteredHike.review}
-                        removeHikeCard = {removeHikeCard}/>
+                        favorite={filteredHike.favorite}
+                        handleFavorite={handleFavorite}
+                        removeHikeCard={removeHikeCard}/>
         )
     })
 
