@@ -63,6 +63,26 @@ class Hikes(Resource):
             return make_response(new_hike.to_dict(),201)
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
+        
+class HikesById(Resource):
+    def delete(self,id):
+        hike = Hike.query.filter_by(id=id).first()
+        if not hike:
+            return make_response({'error':'Hike not found'},400)
+        db.session.delete(hike)
+        db.session.commit()
+        return make_response({'message':'Delete successful'},204)
+    
+    def patch(self,id):
+        hike = Hike.query.filter_by(id=id).first()
+        if not hike:
+            return make_response({'error':'Hike not found'},400)
+        data = request.get_json()
+        for attr in data:
+            setattr(hike,attr,data[attr])
+        db.session.add(hike)
+        db.session.commit()
+        return make_response(hike.to_dict(),200)
 
 # user login and auth
 @app.route('/login', methods=["POST"])
@@ -98,7 +118,6 @@ def signup():
     # save the image file to image_path
     image_file.save(image_path)
 
-
     try:
         new_user = User(
             username=username,
@@ -132,6 +151,7 @@ def send_static(path):
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
 api.add_resource(Hikes,'/hikes')
+api.add_resource(HikeById,'/hikes/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
