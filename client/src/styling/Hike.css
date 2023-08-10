@@ -2,7 +2,11 @@
     padding-top: 175px;
     padding-bottom: 100px;
     margin: 0 45px 0 45px;
-    height: 100vh;
+    order: 0;
+}
+.hike-page{
+    display: flex;
+    flex-direction: column
 }
 
 .hike-header{
@@ -10,11 +14,21 @@
     font-size: 35px;
     margin-bottom: 50px;
     font-weight: bold;
+    
 }
 
 .hike-card{
-    cursor: pointer;
     padding: 20px 10px;
+}
+
+.hike-delete-button{
+    cursor: pointer;
+    padding-top: 7px;
+}
+
+.hike-delete-button:hover{
+    color:#242422;
+    opacity: 0.6;
 }
 
 .trail-content{
@@ -39,6 +53,7 @@
 
 .hike-form{
     padding-bottom: 75px;
+
 }
 
 form{
@@ -48,6 +63,8 @@ form{
     align-content: center;
     text-align: left;
     color: #4b6b3c;
+    order: 1;
+
 }
 
 label{
