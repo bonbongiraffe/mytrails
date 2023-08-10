@@ -1,6 +1,6 @@
 import {Card} from "semantic-ui-react"
 
-function UserCard({name, hikes}){
+function UserCard({name, hikes, image}){
     console.log(hikes)
 const eachHike = hikes.map(hike => {
     return <li key={hike.id}>{hike.trail.name}</li>
@@ -10,6 +10,7 @@ const eachHike = hikes.map(hike => {
             <div className = 'user-card'>
                 <div className='user-card-content'>
                     <p className='card-username'>{name}</p>
+                    <img src ={image} alt ={name}/>
                     <p className='user-card-title'>{name}'s Hikes:</p>
                     <ul>
                         {eachHike}
