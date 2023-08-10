@@ -6,7 +6,7 @@ const eachHike = hikes.map(hike => {
     return <li key={hike.id}>{hike.trail.name}</li>
 })
     return (
-        <Card style={{border: '5px solid #614c33', backgroundColor: '#fffaed'}}>
+        <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>
             <div className = 'user-card'>
                 <div className='user-card-content'>
                     <p className='card-username'>{name}</p>

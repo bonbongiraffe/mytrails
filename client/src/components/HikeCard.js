@@ -13,9 +13,6 @@ function HikeCard({id, trailName, trailLocation, trailPark, trailImage, difficul
         <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>
             <div className='hike-card'>
                 <div className='trail-content'>
-                    {/* <div className="trailcard-image">
-                        <img />
-                    </div> */}
                     <div className="hike-card-info">
                         <div className='trail-name'>{trailName} <button className='heart'onClick={(e) => handleFavorite(id,!favorite)}>{favorite ? "❤️" : "🖤"}</button></div>
                         <img className="trail-img" src={trailImage} alt={trailName} />

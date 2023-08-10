@@ -11,13 +11,8 @@
 }
 
 .trail-card{
-    cursor: pointer;
     padding: 20px 10px;
-    /* opacity: 1; */
 }
-/* .trail-card:hover{
-    opacity: 0.6;
-} */
 
 .trailcard-content{
     color: #4b6b3c;
@@ -64,7 +59,8 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 3px solid #614c33;
+    border: 3px solid #614c33;
+    border-radius: 10px;
     background-color: #fffaed;
     color: #4b6b3c;
 }
