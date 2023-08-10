@@ -4,8 +4,6 @@ import { React, useState, useEffect }from "react"
 import {Card} from "semantic-ui-react"
 import '../styling/Hike.css'
 
-
-
 function HikePage({user}){
     const [hikes, setHikes] = useState([])
 

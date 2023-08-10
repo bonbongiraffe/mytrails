@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from models import db, User, Hike, Trail
 from flask_restful import Api, Resource
-from flask import request, make_response, session
+from flask import request, make_response, session, send_from_directory
 
 from config import app, api, db
 
@@ -96,6 +96,10 @@ def authorized():
 def logout():
     del session['user_id']
     return make_response({"message": "logout successful"}, 204)
+
+@app.route('/static/<path:path>')
+def send_static(path):
+    return send_from_directory('static',path)
 
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')

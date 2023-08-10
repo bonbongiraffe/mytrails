@@ -7,8 +7,8 @@ filepath = 'trails.csv'
 
 def clear_database():
     with app.app_context():
-        print('Deleting users...')
-        User.query.delete()
+        # print('Deleting users...')
+        # User.query.delete()
         Trail.query.delete()
         db.session.commit()
 
@@ -19,7 +19,8 @@ def create_trails(rows):
             trail = Trail(
                 name = rows[i][0],
                 location = rows[i][1],
-                park = rows[i][2]
+                park = rows[i][2],
+                image = rows[i][3]
             )
             trails.append(trail)
         db.session.add_all(trails)
