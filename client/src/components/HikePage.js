@@ -51,6 +51,7 @@ function HikePage({user}){
                         trailName={filteredHike.trail.name}
                         trailLocation={filteredHike.trail.location}
                         trailPark={filteredHike.trail.park}
+                        trailImage={filteredHike.trail.image}
                         difficulty={filteredHike.difficulty}
                         rating={filteredHike.rating}
                         review={filteredHike.review}

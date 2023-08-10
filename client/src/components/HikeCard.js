@@ -1,6 +1,6 @@
 import {Card} from "semantic-ui-react"
 
-function HikeCard({id, trailName, trailLocation, trailPark, difficulty, rating, review, favorite, handleFavorite, removeHikeCard}){
+function HikeCard({id, trailName, trailLocation, trailPark, trailImage, difficulty, rating, review, favorite, handleFavorite, removeHikeCard}){
 
     function handleDelete(){
         fetch(`/hikes/${id}`,
@@ -17,8 +17,8 @@ function HikeCard({id, trailName, trailLocation, trailPark, difficulty, rating, 
                         <img />
                     </div> */}
                     <div className="hike-card-info">
-                        <div className='trail-name'>{trailName}</div>
-                        <button onClick={(e) => handleFavorite(id,!favorite)}>{favorite ? "❤️" : "🖤"}</button>
+                        <div className='trail-name'>{trailName} <button className='heart'onClick={(e) => handleFavorite(id,!favorite)}>{favorite ? "❤️" : "🖤"}</button></div>
+                        <img className="trail-img" src={trailImage} alt={trailName} />
                         <p className="trail-card-title">Location:</p>
                         <p className='trail-location'>{trailLocation}</p>
                         <p className="trail-card-title">Park:</p>

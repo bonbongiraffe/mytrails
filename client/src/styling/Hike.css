@@ -21,6 +21,14 @@
     padding: 20px 10px;
 }
 
+.trail-img{
+    width: 80%;
+}
+
+.heart{
+    cursor: pointer;
+}
+
 .hike-delete-button{
     cursor: pointer;
     padding-top: 7px;
