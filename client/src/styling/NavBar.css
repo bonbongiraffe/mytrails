@@ -23,18 +23,19 @@
 
 /* LOGO */
 .left-side-nav {
-    font-size: 40px;
-    font-weight: bold;
+    /* font-size: 40px;
+    font-weight: bold; */
     float: left;
     display: inline-flex;
     padding-left: 25px;
+    /* padding-bottom: 15px; */
 }
 
 
 /* WELCOME, USER */
 .center-nav{
     font-size: 25px;
-    padding-left: 15%;
+    padding-left: 5%;
 }
 
 

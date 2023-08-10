@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import '../styling/NavBar.css';
+import mytrails from '../myTrails.png'
 
 function NavBar( { user, setUser, navigate } ) {    
 
@@ -18,7 +19,8 @@ function NavBar( { user, setUser, navigate } ) {
     return (
         <div className="header">
             <div className="left-side-nav">
-                <p>My Trails</p>
+                {/* <p>My Trails</p> */}
+                <img className="my-trails" src={mytrails} alt='My Trails' height={100}/>
             </div>
             <div className="center-nav">
                 {user ? <p>Welcome, {user.username}</p> : null}
