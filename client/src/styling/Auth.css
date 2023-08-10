@@ -1,7 +1,7 @@
 .authentication{
     background-color: #3a4928;
     height: 100vh;
-    padding: 30vh 0;
+    padding: 25vh 0;
     color: #e6deb9;
 }
 
@@ -43,7 +43,7 @@
     width: 35%; 
 }
 
-label{
+.form-titles{
     font-size: 20px;
     font-weight: bold;
     margin-top: 30px;
