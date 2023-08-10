@@ -5,7 +5,7 @@
     height: 100vh;
 }
 
-.hike-list-header{
+.hike-header{
     color: #3a4928;
     font-size: 35px;
     margin-bottom: 50px;
@@ -35,4 +35,70 @@
     font-weight: bold;
     padding-top: 20px;
     padding-bottom: 2px;
+}
+
+.hike-form{
+    padding-bottom: 75px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    text-align: left;
+    color: #4b6b3c;
+}
+
+label{
+    margin: 0;
+    padding: 10px 0;
+    width: 50%;
+}
+
+.input-text{
+    width: 50%;
+    float: right;
+    border: 2px solid #3a4928;
+    color: #4b6b3c;
+}
+
+.input-range{
+    width: 50%;
+    float: right;
+}
+
+.input-range::-webkit-slider-runnable-track{
+    background-color: #fffaed;
+    border: 2px solid #3a4928;
+    border-radius: 10px;
+}
+
+.input-range::-webkit-scrollbar-track-piece{
+    background-color: #4b6b3c;
+}
+
+.input-range::-webkit-slider-thumb{
+    background-color: #4b6b3c;
+    border: 2px solid #3a4928;
+    cursor: pointer;
+}
+
+.submit-btn{
+    font-weight: bold;
+    background-color: #fffaed;
+    border: 2px solid #3a4928;
+    color: #4b6b3c;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#incomplete{
+    text-align: center;
+    margin: 0;
+}
+
+.incomplete-c{
+    padding-top: 40px;
 }
