@@ -15,15 +15,14 @@ function NavBar( { user, setUser, navigate } ) {
         }
       })
     }
-
+    console.log(user)
     return (
         <div className="header">
             <div className="left-side-nav">
-                {/* <p>My Trails</p> */}
-                <img className="my-trails" src={mytrails} alt='My Trails' height={100}/>
+                <img className="my-trails" src={mytrails} alt='My Trails' height={75}/>
             </div>
             <div className="center-nav">
-                {user ? <p>Welcome, {user.username}</p> : null}
+                {user ? <><p className="hello">Welcome, {user.username}</p><img className="current-user-img" src={user.profile_image} alt={user.username}/></> : null}
             </div>
             <div className="nav-bar">
                 <li className="nav-bar-list"><NavLink className="nav-bar-link" to="home">Home</NavLink></li>

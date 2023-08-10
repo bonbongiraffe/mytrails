@@ -63,6 +63,26 @@ class Hikes(Resource):
             return make_response(new_hike.to_dict(),201)
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
+        
+class HikesById(Resource):
+    def delete(self,id):
+        hike = Hike.query.filter_by(id=id).first()
+        if not hike:
+            return make_response({'error':'Hike not found'},400)
+        db.session.delete(hike)
+        db.session.commit()
+        return make_response({'message':'Delete successful'},204)
+    
+    def patch(self,id):
+        hike = Hike.query.filter_by(id=id).first()
+        if not hike:
+            return make_response({'error':'Hike not found'},400)
+        data = request.get_json()
+        for attr in data:
+            setattr(hike,attr,data[attr])
+        db.session.add(hike)
+        db.session.commit()
+        return make_response(hike.to_dict(),200)
 
 # user login and auth
 @app.route('/login', methods=["POST"])
@@ -74,7 +94,7 @@ def login():
     if user.authenticate(data["password"]):
         session["user_id"] = user.id
         print(session["user_id"])
-        return make_response(user.to_dict(only=('username','id')), 200)
+        return make_response(user.to_dict(only=('username','id', 'profile_image')), 200)
     else:
         return make_response({"error": "Incorrect password"}, 400)
 
@@ -98,7 +118,6 @@ def signup():
     # save the image file to image_path
     image_file.save(image_path)
 
-
     try:
         new_user = User(
             username=username,
@@ -108,7 +127,7 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
         session["user_id"] = new_user.id
-        return make_response(new_user.to_dict(only=('username','id')), 201)
+        return make_response(new_user.to_dict(only=('username','id', 'profile_image')), 201)
     except ValueError as v_error:
         return make_response({"error":[v_error]}, 400)    
 
@@ -116,7 +135,7 @@ def signup():
 def authorized():
     try:
         user = User.query.filter_by(id=session.get("user_id")).first()
-        return make_response( user.to_dict(only=('username','id')), 200)
+        return make_response( user.to_dict(only=('username','id', 'profile_image')), 200)
     except:
         return make_response({"error": "Please log in or sign up"}, 401)
 
@@ -132,6 +151,7 @@ def send_static(path):
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
 api.add_resource(Hikes,'/hikes')
+api.add_resource(HikesById,'/hikes/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

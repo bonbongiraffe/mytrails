@@ -1,6 +1,6 @@
 .hike-list{
     padding-top: 175px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     margin: 0 45px 0 45px;
     order: 0;
 }
@@ -71,6 +71,7 @@ label{
     margin: 0;
     padding: 10px 0;
     width: 50%;
+    color: #4b6b3c;
 }
 
 .input-text{
