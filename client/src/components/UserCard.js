@@ -10,7 +10,7 @@ const eachHike = hikes.map(hike => {
             <div className = 'user-card'>
                 <div className='user-card-content'>
                     <p className='card-username'>{name}</p>
-                    <img className="social-img" src ={image} alt ={name}/>
+                    <img className='social-img'src ={image} alt ={name}/>
                     <p className='user-card-title'>{name}'s Hikes:</p>
                     <ul>
                         {eachHike}
