@@ -29,7 +29,7 @@ db.init_app( app )
 api = Api( app )
 bcrypt = Bcrypt( app )
 
-UPLOAD_FOLDER = 'user_images'
+UPLOAD_FOLDER = 'static/user_images'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app.secret_key = 'abscfw'
