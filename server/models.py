@@ -30,7 +30,7 @@ class User(db.Model, SerializerMixin):
             self._password_hash, password.encode('utf-8'))
 
     #relationships
-    hikes = db.relationship('Hike',back_populates='user')
+    hikes = db.relationship('Hike',back_populates='user', cascade='all, delete-orphan')
     trails = association_proxy('hikes','trail')
 
     #serialize rules
@@ -53,13 +53,14 @@ class Trail(db.Model, SerializerMixin):
     name = db.Column(db.String, nullable=False)
     location = db.Column(db.String)
     park = db.Column(db.String)
+    image = db.Column(db.String)
 
     @property # <-- aggregate method: calculates average of perceived difficulty from all associated hikes
     def difficulty(self):
         pass
 
     #relationships
-    hikes = db.relationship('Hike',back_populates='trail')
+    hikes = db.relationship('Hike',back_populates='trail', cascade='all, delete-orphan')
     users = association_proxy('hikes','user')
 
     #serialize rules

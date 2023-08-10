@@ -1,7 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import '../styling/Auth.css'
 
 function Authentication({ setUser, navigate }){
+
+    useEffect(() => {
+        document.title="My Trails"
+    }, [])
+
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:"", profile_image: null}) // holds login form data
 
@@ -31,12 +36,22 @@ function Authentication({ setUser, navigate }){
             headers: contentType ? {"Content-Type": contentType} : {},
             body: requestBody
         })
-            .then( r => r.json())
+            .then( r => {
+                if (r.ok) {
+                    return r.json()
+                } else {
+                    throw new Error('Request failed')
+                }
+            })
             .then( user => {
                 if (user)
                     setFormData({username:"",password:""})
                 setUser(user)
                 navigate('home')
+            })
+            .catch( error => {
+                console.log("Invalid login")
+                setFormData({username:"",password:""})
             })
     }
 

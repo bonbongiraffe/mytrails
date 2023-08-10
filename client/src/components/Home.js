@@ -7,7 +7,6 @@ function Home(){
     const [trails, setTrails] = useState([])
     const [search, setSearch] = useState(''); // State for search query
 
-
 useEffect(() => {
     fetch('/trails')
     .then(r => r.json())
@@ -18,28 +17,17 @@ useEffect(() => {
     document.title="My Trails | Home"
 }, [])
 
-
 const filteredTrails = trails.filter(trail =>
     trail.name.toLowerCase().includes(search.toLowerCase())
-).map(filteredTrail => (
+    ).map(filteredTrail => (
     <TrailCard
         key={filteredTrail.id}
         name={filteredTrail.name}
         location={filteredTrail.location}
         park={filteredTrail.park}
+        image={filteredTrail.image}
     />
 ));
-
-
-// const eachTrail = trails.map(trail => {
-//     return (
-//         <TrailCard key ={trail.id}
-//                     name = {trail.name}
-//                     location = {trail.location}
-//                     park={trail.park}
-//                     />
-//     )
-// })
 
     return(
         <div className="trail-list">
