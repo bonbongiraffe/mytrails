@@ -69,7 +69,7 @@ function Authentication({ setUser, navigate }){
             :
             <div className="form-div">
                 <form className="login-signup-form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">username:</label>
+                    <label className="form-titles" htmlFor="username">Username:</label>
                         <input 
                             onChange= {(e)=>{setFormData({...formData, username: e.target.value})}}
                             type="text"
@@ -78,7 +78,7 @@ function Authentication({ setUser, navigate }){
                             className="input-text"
                             value={formData.username}
                         ></input>
-                    <label htmlFor="password">password:</label>
+                    <label className="form-titles" htmlFor="password">Password:</label>
                         <input 
                             onChange= {(e)=>{setFormData({...formData, password: e.target.value})}}
                             type="password"
@@ -88,11 +88,12 @@ function Authentication({ setUser, navigate }){
                             value={formData.password}
                         ></input>
                         {isLogin === 2 ? <div className='signup-image-upload'>
-                            <label htmlFor='profile_image'>Profile Image:</label>
-                            <input 
-                                type="file"
-                                name="image"
-                                onChange={(e) => {setFormData({...formData, image: e.target.files[0]})}}/>
+                            <label className="form-titles" htmlFor='profile_image'>Profile Picture:</label>
+                                <input 
+                                    className="choose-pic"
+                                    type="file"
+                                    name="image"
+                                    onChange={(e) => {setFormData({...formData, image: e.target.files[0]})}}/>
                         </div> : null}
                     <button className="submit-btn" type="submit">{isLogin === 1 ? "Login" : "Signup"}</button>
                 </form>

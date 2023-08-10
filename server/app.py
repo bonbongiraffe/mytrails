@@ -94,7 +94,7 @@ def login():
     if user.authenticate(data["password"]):
         session["user_id"] = user.id
         print(session["user_id"])
-        return make_response(user.to_dict(only=('username','id')), 200)
+        return make_response(user.to_dict(only=('username','id', 'profile_image')), 200)
     else:
         return make_response({"error": "Incorrect password"}, 400)
 
@@ -127,7 +127,7 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
         session["user_id"] = new_user.id
-        return make_response(new_user.to_dict(only=('username','id')), 201)
+        return make_response(new_user.to_dict(only=('username','id', 'profile_image')), 201)
     except ValueError as v_error:
         return make_response({"error":[v_error]}, 400)    
 
@@ -135,7 +135,7 @@ def signup():
 def authorized():
     try:
         user = User.query.filter_by(id=session.get("user_id")).first()
-        return make_response( user.to_dict(only=('username','id')), 200)
+        return make_response( user.to_dict(only=('username','id', 'profile_image')), 200)
     except:
         return make_response({"error": "Please log in or sign up"}, 401)
 

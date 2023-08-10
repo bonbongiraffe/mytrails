@@ -10,7 +10,7 @@ function TrailCard({name, location, park, image}){
                 <div className="trailcard-content">
                     <p className="trail-name">{name}</p>
                     <div className="trailcard-image">
-                        <img src={image} alt={name}/>
+                        <img className='trail-pic'src={image} alt={name} />
                     </div>
                     <div className="trail-card-info">
                         <p className="trail-card-title">Location:</p>
