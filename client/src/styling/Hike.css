@@ -102,6 +102,7 @@ label{
     border-radius: 10px;
     color: #4b6b3c;
     text-align: center;
+    outline: none;
 }
 
 .input-range{
