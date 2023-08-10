@@ -38,6 +38,12 @@ function HikePage({user}){
         document.title="My Trails | My Hikes"
     }, [])
 
+    const removeHikeCard = (id) => {
+        setHikes((currentHikes) =>
+            currentHikes.filter((hike) => hike.id !== id)
+        )
+    }
+
     const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
         return (
             <HikeCard   key={filteredHike.id}
@@ -49,7 +55,8 @@ function HikePage({user}){
                         rating={filteredHike.rating}
                         review={filteredHike.review}
                         favorite={filteredHike.favorite}
-                        handleFavorite={handleFavorite}/>
+                        handleFavorite={handleFavorite}
+                        removeHikeCard={removeHikeCard}/>
         )
     })
 
