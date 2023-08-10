@@ -16,6 +16,7 @@ useEffect(() => {
 const eachUser = users.filter(eachUser => eachUser.id !== user.id).map(filteredUser => {
     return <UserCard key={filteredUser.id}
                     name={filteredUser.username}
+                    image={filteredUser.profile_image}
                     hikes={filteredUser.hikes}
                     />
 })
