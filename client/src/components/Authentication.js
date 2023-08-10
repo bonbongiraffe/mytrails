@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import '../styling/Auth.css'
+import mytrails from '../myTrails.png'
 
 function Authentication({ setUser, navigate }){
 
@@ -57,7 +58,8 @@ function Authentication({ setUser, navigate }){
 
     return(
         <div className="authentication">
-            <p className="welcome">Welcome to My Hikes!</p>
+            <p className="welcome">Welcome to</p>
+            <img className='my-trails'src={mytrails} alt="My Trails" height={175}/>
             <p className="continue">To continue, please Login or Signup.</p>
             {isLogin === 0 ? 
             <div className="login-or-signup">
