@@ -42,7 +42,6 @@ const filteredTrails = trails.filter(trail =>
                 />
             </div>
             <Card.Group itemsPerRow={3}>
-                {/* {eachTrail} */}
                 {filteredTrails}
             </Card.Group>
         </div>
