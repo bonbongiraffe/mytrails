@@ -75,7 +75,7 @@ function HikeForm({ user, trail=null, addNewHike }){
                         type="text"
                         review= "review"
                         placeholder="Write your comments here..."
-                        className="input-text"
+                        className="input-comment"
                         value={formData.review}
                     ></input>
                 </label>

@@ -1,3 +1,7 @@
+body{
+    accent-color: #4b6b3c !important;
+}
+
 .hike-list{
     padding-top: 175px;
     padding-bottom: 150px;
@@ -76,6 +80,7 @@ form{
 }
 
 label{
+    font-weight: bold;
     margin: 0;
     padding: 10px 0;
     width: 50%;
@@ -87,6 +92,16 @@ label{
     float: right;
     border: 2px solid #3a4928;
     color: #4b6b3c;
+}
+.input-comment{
+    width: 50%;
+    height: 60px;
+    float: right;
+    background-color: #fffaed;
+    border: 2px solid #3a4928;
+    border-radius: 10px;
+    color: #4b6b3c;
+    text-align: center;
 }
 
 .input-range{
@@ -103,14 +118,15 @@ label{
 
 .input-range::-webkit-scrollbar-track-piece{
     -webkit-appearance: none;
-    background-color: #4b6b3c !important;
+    accent-color: #4b6b3c !important;
+    background-color: #4b6b3c;
 }
 
 .input-range::-webkit-slider-thumb{
     overflow: visible;
     -webkit-appearance: none;
-    background-color: #4b6b3c !important;
-    border: 2px solid #3a4928 !important;
+    accent-color: #4b6b3c !important;
+    /* border: 2px solid #3a4928 !important; */
     cursor: pointer;
 }
 
