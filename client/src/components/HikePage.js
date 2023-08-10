@@ -44,7 +44,7 @@ function HikePage({user}){
         )
     }
 
-    const eachHike = hikes.filter((hike) => hike.user_id === user.id).map(filteredHike => {
+    const eachHike = hikes.filter((hike) => hike.user_id === user?.id).map(filteredHike => {
         return (
             <HikeCard   key={filteredHike.id}
                         id={filteredHike.id}
