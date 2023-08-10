@@ -2,7 +2,6 @@ import {Card} from "semantic-ui-react"
 import '../styling/Home.css'
 
 function TrailCard({name, location, park, image}){
-    // console.log(image)
 
     return (
         <Card style={{border: '5px solid #614c33', borderRadius: '10px', backgroundColor: '#fffaed'}}>

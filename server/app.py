@@ -13,7 +13,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
 @app.route('/')
 def index():
     return '<h1>My (Happy) Trails!</h1>'
@@ -151,7 +150,7 @@ def send_static(path):
 api.add_resource(Users,'/users')
 api.add_resource(Trails,'/trails')
 api.add_resource(Hikes,'/hikes')
-api.add_resource(HikeById,'/hikes/<int:id>')
+api.add_resource(HikesById,'/hikes/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
