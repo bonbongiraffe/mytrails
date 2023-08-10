@@ -1,7 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import '../styling/Auth.css'
 
 function Authentication({ setUser, navigate }){
+
+    useEffect(() => {
+        document.title="My Trails"
+    }, [])
+
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:""}) // holds login form data
 

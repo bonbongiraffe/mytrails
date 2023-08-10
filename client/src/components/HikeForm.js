@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import '../styling/Hike.css'
 
 function HikeForm({ user, trail=null, addNewHike }){
     const [ formData, setFormData ] = useState({difficulty:0,rating:0,review:""})
@@ -45,7 +46,7 @@ function HikeForm({ user, trail=null, addNewHike }){
     return(
         <div className = "hikeForm">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="difficulty">Difficulty
+                <label htmlFor="difficulty">Difficulty:
                     <input
                         onChange= {(e)=>{setFormData({...formData, difficulty: parseInt(e.target.value)})}}
                         type="range"
@@ -56,8 +57,9 @@ function HikeForm({ user, trail=null, addNewHike }){
                         value={formData.difficulty}
                     ></input>
                 </label>
-                <label htmlFor="rating">Rating
+                <label htmlFor="rating">Rating:
                     <input
+                        style={{}}
                         onChange= {(e)=>{setFormData({...formData, rating: parseInt(e.target.value)})}}
                         type="range"
                         className="input-range"
@@ -67,7 +69,7 @@ function HikeForm({ user, trail=null, addNewHike }){
                         value={formData.rating}
                     ></input>
                 </label>
-                <label htmlFor="review">Review
+                <label htmlFor="review">Review:
                     <input
                         onChange= {(e)=>{setFormData({...formData, review: e.target.value})}}
                         type="text"
@@ -80,7 +82,7 @@ function HikeForm({ user, trail=null, addNewHike }){
                 {trail ? 
                 null
                 :
-                <label htmlFor="trailId">Trail Name
+                <label htmlFor="trailId">Trail Name:
                     <input
                         onChange={(e) => setInputTrail(e.target.value)}
                         onKeyDown={handleTabPress}
@@ -91,7 +93,7 @@ function HikeForm({ user, trail=null, addNewHike }){
                     ></input>
                 </label>
                 }
-                {trailNames.includes(inputTrail) ? <button type="submit">Submit</button> : <p>Incomplete form</p> }
+                {trailNames.includes(inputTrail) ? <button type="submit" className="submit-btn">Submit</button> : <><p id="incomplete" className="incomplete-c">Incomplete Form.</p><p id="incomplete">To submit a hike, please fill out the form in its entirety with a valid trail name.</p></> }
             </form>
         </div>
     )
