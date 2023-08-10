@@ -19,6 +19,9 @@
     padding-right: 25px;
     float:right;
 }
+.header:hover{
+    box-shadow: 0px 10px 16px 10px rgba(97, 76, 51, 0.5);
+  }
 
 
 /* LOGO */
