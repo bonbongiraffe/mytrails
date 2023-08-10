@@ -80,6 +80,7 @@ class Hike(db.Model, SerializerMixin):
     difficulty = db.Column(db.Integer) # <-- perceived difficulty -/5
     rating = db.Column(db.Integer) # <-- enjoyment of hike -/5
     review = db.Column(db.String) # <-- user comments on hike
+    favorite = db.Column(db.Boolean) # <-- true or false
 
     #relationships
     user = db.relationship('User',back_populates='hikes')
