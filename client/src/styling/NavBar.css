@@ -34,7 +34,19 @@
 
 /* WELCOME, USER */
 .center-nav{
-    font-size: 25px;
+    font-size: 20px;
+    display: flex;
+}
+.hello{
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-right: 15px;
+}
+.current-user-img{
+    width: 65px;
+    height: 65px;
 }
 
 
