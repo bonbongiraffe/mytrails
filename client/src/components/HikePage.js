@@ -44,30 +44,63 @@ function HikePage({user}){
         )
     }
 
-    const eachHike = hikes.filter((hike) => hike.user_id === user?.id).map(filteredHike => {
-        return (
-            <HikeCard   key={filteredHike.id}
-                        id={filteredHike.id}
-                        trailName={filteredHike.trail.name}
-                        trailLocation={filteredHike.trail.location}
-                        trailPark={filteredHike.trail.park}
-                        trailImage={filteredHike.trail.image}
-                        difficulty={filteredHike.difficulty}
-                        rating={filteredHike.rating}
-                        review={filteredHike.review}
-                        favorite={filteredHike.favorite}
-                        handleFavorite={handleFavorite}
-                        removeHikeCard={removeHikeCard}/>
-        )
-    })
+    // const eachHike = hikes.filter((hike) => hike.user_id === user?.id).map(filteredHike => {
+    //     return (
+    //         <HikeCard   key={filteredHike.id}
+    //                     id={filteredHike.id}
+    //                     trailName={filteredHike.trail.name}
+    //                     trailLocation={filteredHike.trail.location}
+    //                     trailPark={filteredHike.trail.park}
+    //                     trailImage={filteredHike.trail.image}
+    //                     difficulty={filteredHike.difficulty}
+    //                     rating={filteredHike.rating}
+    //                     review={filteredHike.review}
+    //                     favorite={filteredHike.favorite}
+    //                     handleFavorite={handleFavorite}
+    //                     removeHikeCard={removeHikeCard}/>
+    //     )
+    // })
+
+    const [search, setSearch] = useState(''); // State for search query
+
+    const filteredHike = hikes
+    .filter(hike => hike.user_id === user?.id) // Filter by user_id
+    .filter(hike => hike.trail && hike.trail.name.toLowerCase().includes(search.toLowerCase())) // Apply search filter
+    .map(filteredHike => (
+        <HikeCard
+            key={filteredHike.id}
+            id={filteredHike.id}
+            trailName={filteredHike.trail.name}
+            trailLocation={filteredHike.trail.location}
+            trailPark={filteredHike.trail.park}
+            trailImage={filteredHike.trail.image}
+            difficulty={filteredHike.difficulty}
+            rating={filteredHike.rating}
+            review={filteredHike.review}
+            favorite={filteredHike.favorite}
+            handleFavorite={handleFavorite}
+            removeHikeCard={removeHikeCard}
+        />
+    ));
+    
 
     return (
         <div className='hike-page'>
             <div className='hike-list'>
             <h1 className="hike-header">My Hikes</h1>
-                <Card.Group itemsPerRow={3}>
-                    {eachHike}
-                </Card.Group>
+            <div className="search-container">
+                <input
+                    className="search-input"
+                    icon="search"
+                    placeholder="Search your hikes . . ."
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </div>
+            <Card.Group itemsPerRow={3}>
+                {/* {eachHike} */}
+                {filteredHike}
+            </Card.Group>
             </div>
             <div className='hike-form'>
                 <h1 className="hike-header">Add a Hike</h1>

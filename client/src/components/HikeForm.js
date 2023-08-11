@@ -15,7 +15,7 @@ function HikeForm({ user, trail=null, addNewHike }){
 
     const handleTabPress = (e) => {
         const matchingTrail = trailNames.find((trail) =>
-            trail.toLowerCase().startsWith(inputTrail.toLowerCase())
+            (trail.toLowerCase().startsWith(inputTrail.toLowerCase()) || trail.toLowerCase().includes(inputTrail.toLowerCase()))
         )
         // console.log(trailNames.indexOf(inputTrail)+1)
         // console.log(matchingTrail)
