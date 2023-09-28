@@ -16,7 +16,7 @@ function App() {
   },[])
 
   const fetchUser = () => {
-    fetch("/authorized")
+    fetch("https://mytrails-official-backend.onrender.com/authorized")
       .then( r => {
         if (r.ok) {
           r.json().then( user => setUser(user) )

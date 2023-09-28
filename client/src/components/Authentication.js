@@ -32,7 +32,7 @@ function Authentication({ setUser, navigate }){
 
             contentType = undefined
         }
-        fetch(`/${route}`,{
+        fetch(`https://mytrails-official-backend.onrender.com/${route}`,{
             method: "POST",
             headers: contentType ? {"Content-Type": contentType} : {},
             body: requestBody
