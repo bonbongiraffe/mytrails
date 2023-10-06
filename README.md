@@ -16,8 +16,8 @@ Cloen the `mytrails` repository onto your local machine and simply run `bash lau
     - User --> Hike <-- Trail
     - User: username, _password_hash, profile_image
         - validates: username, 
-    - Hike: Difficulty, Rating, Review, Favorite
-        - validates: Difficulty
+    - Hike: difficulty, rating, review, favorite
+        - validates: difficulty
     - Trail: name, location, park, image
 3. ### Back-end (Flask):
     - RESTful routes for CRUD:
@@ -56,5 +56,5 @@ Cloen the `mytrails` repository onto your local machine and simply run `bash lau
 
 ### Thank you for viewing our project!
 ### —Alexis Boucovalas
-### —Shanley Caswell
+### —Shanley Elizabeth
 ### —Francesco Wai
