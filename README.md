@@ -44,6 +44,7 @@ Cloen the `mytrails` repository onto your local machine and simply run `bash lau
     - socials page features:
         - thumbs-up button 
         - commenting functionality
+    - hike form directly from trail cards
 
 ## Quick-Start Guide
 1. Clone repository onto your local machine: `git clone git@github.com:bonbongiraffe/mytrails.git`
