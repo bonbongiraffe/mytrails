@@ -15,7 +15,7 @@ function NavBar( { user, setUser, navigate } ) {
         }
       })
     }
-    console.log(user)
+    // console.log(user)
     return (
         <div className="header">
             <div className="left-side-nav">
