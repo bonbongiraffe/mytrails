@@ -22,12 +22,12 @@ Cloen the `mytrails` repository onto your local machine and simply run `bash lau
 3. ### Back-end (Flask):
     - RESTful routes for CRUD:
         - `/users`
-            - create, read
+            - read
         - `/trails`
             - read
-        - `/hike`
+        - `/hikes`
             - create, read
-        - `/hike/<id>`
+        - `/hikes/<id>`
             - update, delete
     - user authentication (non-restful): `/login`, `/signup`, `/authorized`, and `/logout`
 4. ### Front-end (React.js):
