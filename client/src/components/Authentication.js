@@ -51,7 +51,7 @@ function Authentication({ setUser, navigate }){
                 navigate('home')
             })
             .catch( error => {
-                console.log("Invalid login")
+                // console.log("Invalid login")
                 setFormData({username:"",password:""})
             })
     }

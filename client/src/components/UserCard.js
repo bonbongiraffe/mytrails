@@ -1,7 +1,7 @@
 import {Card} from "semantic-ui-react"
 
 function UserCard({name, hikes, image}){
-    console.log(hikes)
+    // console.log(hikes)
 const eachHike = hikes.map(hike => {
     return <li key={hike.id}>{hike.trail.name}</li>
 })

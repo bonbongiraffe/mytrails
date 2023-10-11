@@ -36,7 +36,11 @@ function HikeForm({ user, trail=null, addNewHike }){
             })
         })
             .then( r => r.json())
-            .then( newHike => addNewHike(newHike))
+            .then( newHike => {
+                addNewHike(newHike)
+                setFormData({difficulty:0,rating:0,review:""})
+                setInputTrail("")
+            })
     }
 
     if (!!trail){

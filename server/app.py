@@ -92,7 +92,7 @@ def login():
         return make_response({"error": "User not found"}, 400)
     if user.authenticate(data["password"]):
         session["user_id"] = user.id
-        print(session["user_id"])
+        # print(session["user_id"])
         return make_response(user.to_dict(only=('username','id', 'profile_image')), 200)
     else:
         return make_response({"error": "Incorrect password"}, 400)
@@ -140,7 +140,8 @@ def authorized():
 
 @app.route('/logout', methods=["DELETE"])
 def logout():
-    del session['user_id']
+    if 'user_id' in session:
+        del session['user_id']
     return make_response({"message": "logout successful"}, 204)
 
 @app.route('/static/<path:path>')
