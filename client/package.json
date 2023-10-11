@@ -1,5 +1,5 @@
 {
-  "proxy": "https://mytrails-official-backend.onrender.com",
+  "proxy": "http://localhost:5555",
   "name": "client",
   "version": "0.1.0",
   "private": true,
