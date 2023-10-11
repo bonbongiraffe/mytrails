@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-from models import db, User, Hike, Trail
+from server.models import db, User, Hike, Trail
 from flask_restful import Api, Resource
 from flask import request, make_response, session, send_from_directory
 from werkzeug.utils import secure_filename
 import os
 
-from config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
+from server.config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
